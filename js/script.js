@@ -23,7 +23,11 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     })
   })
   .then(() => {
-    alert("Заявка отправлена!");
+    const msg = document.createElement("div");
+    msg.textContent = "Заявка отправлена!";
+    msg.style.color = "green";
+    msg.style.marginTop = "10px";
+    this.appendChild(msg);
     this.reset();
   })
   .catch(() => {

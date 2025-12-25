@@ -23,11 +23,21 @@ body {
   max-width: 420px;
   margin: auto;
   margin-top: 50px;
-  background: #fff;
   border-radius: 24px;
   padding: 28px;
   text-align: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+  background: linear-gradient(180deg, #fff, #fdfdfd);
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Фото */
@@ -38,8 +48,8 @@ body {
 
 .badge {
   position: absolute;
-  bottom: -6px;
-  right: 50%;
+  /*bottom: -6px;
+  right: 50%;*/
   transform: translateX(95px);
   background: linear-gradient(135deg, #FF6A3D, #ff875f);
   color: #fff;
@@ -49,6 +59,10 @@ body {
   font-weight: 600;
   box-shadow: 0 6px 16px rgba(255,106,61,.45);
   white-space: nowrap;
+  bottom: auto;
+  top: 10px;
+  right: 10px;
+  transform: none;
 }
 
 .header img {
@@ -59,6 +73,11 @@ body {
   border: 6px solid #fff;
   margin-top: -80px;
   box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.header img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 
 /* Заголовки */
@@ -93,11 +112,6 @@ h1 {
   transform: translateY(-1px);
 }
 
-.btn.telegram {
-  background: linear-gradient(135deg, #2BA4E0, #1c8acb);
-  box-shadow: 0 10px 20px rgba(43,164,224,.35);
-}
-
 .btn.primary {
   background: var(--accent);
 }
@@ -116,6 +130,30 @@ h1 {
   font-size: 15px;
   color: var(--text);
   text-decoration: none;
+}
+
+.info a {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.info a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.info a img {
+  width: 20px;
+  height: 20px;
+}
+
+.info a, .btn {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.3s;
 }
 
 /* О себе */
@@ -166,4 +204,12 @@ form textarea {
 form button {
   margin-top: 10px;
   background: var(--accent);
+}
+
+form button {
+  transition: 0.3s;
+}
+form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255,106,61,0.4);
 }
