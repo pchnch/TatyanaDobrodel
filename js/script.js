@@ -1,5 +1,5 @@
 const TOKEN = "8254708263:AAG44ieJsBA-R1QzYMmvVg_2ytPFsn8bBvA";
-const CHAT_ID = "691818395";
+const CHAT_ID = "569301626";
 
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
